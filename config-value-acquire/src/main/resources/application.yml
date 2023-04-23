@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+person:
+  name: tom
+  age: 11
+  birth: 2022/1/2
+  list:
+    - 11
+    - 22
+    - 33
+  map: {k1:v1, k2:v2}
+  dog:
+    name: 狗子
