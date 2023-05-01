@@ -2,6 +2,7 @@ package com.programmer.springboot;
 
 import com.programmer.springboot.model.Cat;
 import com.programmer.springboot.model.Person;
+import com.programmer.springboot.model.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ public class ConfigValueAcquireApplicationTests {
     private Person person;
     @Autowired
     private Cat cat;
+    @Autowired
+    private Student student;
 
     @Test
     public void testPerson() {
@@ -25,6 +28,11 @@ public class ConfigValueAcquireApplicationTests {
     @Test
     public void testCat() {
         System.out.println(cat);
+    }
+
+    @Test
+    public void testStudent() {
+        System.out.println(student);
     }
 
 }

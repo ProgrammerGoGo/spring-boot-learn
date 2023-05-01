@@ -1,6 +1,7 @@
 package com.programmer.springboot.model;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
@@ -13,11 +14,13 @@ import java.util.Map;
  * @Author programmerGoGo
  * @Description 将配置文件中配置的每一个属性的值，映射到这个组件中
  *
- * @ConfigurationProperties 告诉spring将类中所有属性和配置文件中的相关配置绑定
+ * @ConfigurationProperties 告诉spring将类中所有属性和配置文件中的相关配置绑定（默认从全局配置文件中获取）
+ * @PropertySource:加载指定的配置文件;
  * <p>
  * 注意只有容器中的组件才能使用容器提供的功能，所以加 @Component
  */
 @Component
+@PropertySource(value = {"classpath:person.properties"})
 @ConfigurationProperties(prefix = "person")
 //@Validated
 public class Person {
