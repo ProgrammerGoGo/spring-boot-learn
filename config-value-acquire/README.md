@@ -38,7 +38,7 @@ spring.profiles.active=dev
 
 2、命令行:
 ```shell
-// 可以直接在测试的时候，配置传入命令行参数
+# 可以直接在测试的时候，配置传入命令行参数
 java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev; 
 ```
 
