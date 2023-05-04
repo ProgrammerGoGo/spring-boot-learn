@@ -31,12 +31,20 @@ SpringBoot使用一个全局的配置文件，配置文件名是固定的;
 默认使用application.properties的配置;
 
 ## 激活指定profile
-1、在配置文件中指定 spring.profiles.active=dev
+1、在配置文件中指定 
+```properties
+spring.profiles.active=dev
+```
 
 2、命令行:
-java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev; 可以直接在测试的时候，配置传入命令行参数
+```shell
+// 可以直接在测试的时候，配置传入命令行参数
+java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev; 
+```
 
 3、虚拟机参数;
+```shell
 -Dspring.profiles.active=dev
+```
 
 ![img.png](img.png)
