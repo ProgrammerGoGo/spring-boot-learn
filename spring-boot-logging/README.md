@@ -1,10 +1,14 @@
 
+# springboot默认日志配置
+
+
 [spring-log官方文档配置](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.logging)
 
 1、通过设置 application.properties 修改日志相关参数。
 
 2、通过添加日志配置文件修改日志相关参数。
 ![img.png](img.png)
+
 [官方文档配置参考](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.logging.logback-extensions.profile-specific)
 ```xml
 <springProfile name="staging">
