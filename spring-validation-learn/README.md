@@ -1,5 +1,5 @@
 
-> [Validation框架的应用](https://www.cnblogs.com/Tiancheng-Duan/p/12670866.html)
+> [Validation框架的应用](https://www.cnblogs.com/Tiancheng-Duan/p/12670866.html)  
 > [@Valid 和 @Validated 注解用法详解](https://blog.csdn.net/sunnyzyq/article/details/103527380)
 
 Java API规范(JSR303)定义了Bean校验的标准validation-api，但没有提供实现。hibernate validation是对这个规范的实现，并增加了校验注解如@Email、@Length等。
