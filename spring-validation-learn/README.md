@@ -1,3 +1,6 @@
+
+> [Validation框架的应用](https://www.cnblogs.com/Tiancheng-Duan/p/12670866.html)
+
 Java API规范(JSR303)定义了Bean校验的标准validation-api，但没有提供实现。hibernate validation是对这个规范的实现，并增加了校验注解如@Email、@Length等。
 
 Spring Validation是对hibernate validation的二次封装，用于支持spring mvc参数自动校验。接下来，我们以spring-boot项目为例，介绍Spring Validation的使用。
