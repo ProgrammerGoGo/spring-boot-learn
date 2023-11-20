@@ -39,7 +39,6 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public String handleConstraintViolationException(ConstraintViolationException ex) {
-        return null;
-//        return Result.fail(BusinessCode.参数校验失败, ex.getMessage());
+        return "参数校验失败: " + ex.getMessage();
     }
 }
