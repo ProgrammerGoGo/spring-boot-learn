@@ -5,7 +5,7 @@ spring:
   datasource:
     #通用配置
     driver-class-name: com.mysql.jdbc.Driver
-    password: root
+    password: Root_12root
     username: root
     url: jdbc:mysql://localhost:3306/learn?serverTimezone=Asia/Shanghai&useUnicode=true&charcterEncoding=UTF-8&useSSL=false
     #数据源连接池配置
