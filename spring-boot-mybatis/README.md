@@ -1,5 +1,19 @@
 
-# SpringBoot使用JdbcTemplate
+# 前置准备
+
+引入 Spring Boot Starter 父工程
+
+```xml
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.3-RELEASE</version>
+    <relativePath/>
+</parent>
+```
+
+
+# 方法一：SpringBoot 使用 JdbcTemplate
 
 添加pom依赖
 
@@ -40,3 +54,71 @@ spring:
       connection-timeout: 60000
       connection-test-query: select 1
 ```
+
+
+# 方法二：SpringBoot 使用 mybatis-plus
+
+> [mybatis-plus官方文档](https://baomidou.com/pages/779a6e/#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
+
+## 配置依赖 pom
+```xml
+<!-- JDBC -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+<!-- MySQL 驱动包-->
+<!--MySQL Server 版本为 8.x时，mysql-connector-java使用5.1.35时会报错-->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.11</version>
+</dependency>
+
+<!-- mybatis-plus 依赖包-->
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>3.5.5</version>
+</dependency>
+```
+
+## 配置 application.yml 连接数据库
+
+```yaml
+spring:
+  datasource:
+    #通用配置
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/learn?serverTimezone=Asia/Shanghai&useUnicode=true&charcterEncoding=UTF-8&useSSL=false
+    #数据源连接池配置
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+      idle-timeout: 500000
+      max-lifetime: 540000
+      connection-timeout: 60000
+      connection-test-query: select 1
+```
+
+## 使用 mybatis-plus 进行映射
+
+## 创建 UserPO 实体
+
+使用 mybatis-plus 进行映射
+
+```
+```
+
+## 创建 XXXMapper 类
+
+
+## 在启动类增加注解 @MapperScan("Mapper类所在的包名")
+
+这里 @MapperScan 配置的路径下的 mapper 类会被mybatis识别并生成代理类
+
+
+
