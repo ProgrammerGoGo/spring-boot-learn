@@ -1,7 +1,7 @@
 
 # 前置准备
 
-引入 Spring Boot Starter 父工程
+## 引入 Spring Boot Starter 父工程
 
 ```xml
 <parent>
@@ -12,6 +12,37 @@
 </parent>
 ```
 
+## 添加阿里云镜像
+
+```xml
+<repositories>
+    <repository>
+        <id>nexus-aliyun</id>
+        <name>nexus-aliyun</name>
+        <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+<pluginRepositories>
+    <pluginRepository>
+        <id>public</id>
+        <name>aliyun nexus</name>
+        <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </pluginRepository>
+</pluginRepositories>
+```
 
 # 方法一：SpringBoot 使用 JdbcTemplate
 
@@ -56,7 +87,49 @@ spring:
 ```
 
 
-# 方法二：SpringBoot 使用 mybatis-plus
+# 方法二：SpringBoot 使用 mybatis
+
+> [springboot集成mybatis](https://cloud.tencent.com/developer/article/2102778)
+
+## 添加pom依赖
+
+```xml
+<!-- JDBC -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+<!-- MySQL 驱动包-->
+<!--MySQL Server 版本为 8.x时，mysql-connector-java使用5.1.35时会报错-->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.11</version>
+</dependency>
+```
+
+## application.yml中数据源和mybatis配置
+
+```yaml
+spring:
+  datasource:
+    #通用配置
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/learn?serverTimezone=Asia/Shanghai&useUnicode=true&charcterEncoding=UTF-8&useSSL=false
+
+mybatis:
+  mapper-locations: com/programmer/springboot/mybatis/mapper
+```
+
+## mapper接口和xml生成
+
+
+
+
+# 方法三：SpringBoot 使用 mybatis-plus
 
 > [mybatis-plus官方文档](https://baomidou.com/pages/779a6e/#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
 
