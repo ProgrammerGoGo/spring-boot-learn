@@ -89,7 +89,8 @@ spring:
 
 # 方法二：SpringBoot 使用 mybatis
 
-> [springboot集成mybatis](https://cloud.tencent.com/developer/article/2102778)
+> [springboot集成mybatis](https://cloud.tencent.com/developer/article/2102778)  
+> [springboot集成mybatis](https://cloud.tencent.com/developer/article/2371895?areaId=106001)
 
 ## 添加pom依赖
 
