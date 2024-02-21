@@ -95,10 +95,11 @@ spring:
 ## 添加pom依赖
 
 ```xml
-<!-- JDBC -->
+<!-- MyBatis -->
 <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-jdbc</artifactId>
+    <groupId>org.mybatis.spring.boot</groupId>
+    <artifactId>mybatis-spring-boot-starter</artifactId>
+    <version>2.2.0</version>
 </dependency>
 
 <!-- MySQL 驱动包-->
