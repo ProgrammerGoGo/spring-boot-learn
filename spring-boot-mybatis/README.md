@@ -46,7 +46,7 @@
 
 # 方法一：SpringBoot 使用 JdbcTemplate
 
-添加pom依赖
+## 添加pom依赖
 
 ```xml
 <!-- JDBC -->
@@ -64,7 +64,7 @@
 </dependency>
 ```
 
-application.yml中hikari数据源配置
+## application.yml中hikari数据源配置
 ```yaml
 server:
   port: 9999
@@ -86,6 +86,40 @@ spring:
       connection-test-query: select 1
 ```
 
+## 测试
+
+```java
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(value = SpringRunner.class)
+@SpringBootTest(classes = SpringBootMybatisApplication.class)
+public class SpringBootMybatisApplicationTests {
+
+}
+
+--------------------
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.util.List;
+import java.util.Map;
+
+public class JdbcTemplateTest extends SpringBootMybatisApplicationTests {
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @Test
+    public void contextLoads() {
+        List<Map<String, Object>> maps = jdbcTemplate.queryForList("select * from user");
+        System.out.println(maps);
+    }
+
+}
+```
 
 # 方法二：SpringBoot 使用 mybatis
 
