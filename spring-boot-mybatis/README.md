@@ -162,7 +162,7 @@ mybatis:
 
 ## mapper接口和xml生成
 
-
+使用 better-mybatis-generator 插件
 
 
 # 方法三：SpringBoot 使用 mybatis-plus
